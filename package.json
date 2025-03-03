@@ -1,7 +1,7 @@
 {
   "name": "template-repo",
   "version": "1.0.0",
-  "description": "a template for vanilla js projects",
+  "description": "A simple weather app based on the visual crossing api",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Yacine-27/template-repo.git"
+    "url": "https://github.com/Yacine-27/Weatherly"
   },
   "author": "",
   "license": "ISC",

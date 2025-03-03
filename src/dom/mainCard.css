@@ -1,0 +1,72 @@
+.main-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  background-color: var(--nav-color);
+  padding: 1.5rem;
+  width: clamp(30vw, 50rem, 80rem);
+  border-radius: 2rem;
+}
+
+.main-card-unit-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--background-color);
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.main-card--now {
+  text-transform: capitalize;
+  font-size: 3rem;
+}
+
+.main-card--weather {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  padding-bottom: 1rem;
+}
+
+.main-card--degree {
+  width: 50%;
+  font-size: 3rem;
+  color: #fff;
+  position: relative;
+}
+
+.main-card--degree span {
+  position: absolute;
+  font-size: 2rem;
+}
+
+.main-card--weather svg {
+  width: 35%;
+  fill: #fff;
+}
+
+.main-card--weather {
+  border-bottom: 0.1rem solid var(--font-color);
+}
+
+.trailer-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.trailer-item p {
+  font-size: 2rem;
+}
+
+.trailer-item svg {
+  width: 3rem;
+  fill: #fff;
+}

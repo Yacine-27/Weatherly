@@ -1,4 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Sigmar&display=swap");
+
+html {
+  font-family: "Roboto", serif;
+}
+
+:root {
+  --background-color: #1e202b;
+  --nav-color: #323544;
+  --font-color: #989ba3;
+  --svg-color: #2bbbdc;
+}
+
+* {
+  font-size: 10px;
+  padding: 0;
+  margin: 0;
+}
+
 body {
-  background-color: rebeccapurple;
-  color: white;
+  background-color: var(--background-color);
+  color: var(--font-color);
+}
+
+nav {
+  background-color: var(--nav-color);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+  font-family: "Sigmar", serif;
+}
+
+.logo h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+nav form {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  padding-right: 2rem;
+  gap: 1.5rem;
+}
+
+.widget {
+  font-size: 2.5rem;
+}
+
+.widget * {
+  font-size: inherit;
+}
+
+.widget input[type="text"] {
+  background-color: var(--background-color);
+  border: none;
+  height: 4rem;
+  border-radius: 3rem;
+  color: #fff;
+  padding: 0.5rem 2rem;
+  min-width: 30%;
+  border: 0.1rem solid #989ba3;
+}
+
+.widget input[type="text"]:focus {
+  outline: none;
+}
+
+.widget button[type="submit"] {
+  background-color: var(--background-color);
+  color: inherit;
+  border: none;
+  padding: 1.2rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.widget button[type="submit"]:hover,
+.main-card-unit-button:hover {
+  transform: scale(1.1);
+  background: #009ad8;
+  color: #fff;
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3rem;
 }
