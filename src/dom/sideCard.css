@@ -1,0 +1,35 @@
+.side-card {
+  background-color: var(--nav-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: min-content;
+}
+
+.side-card:hover {
+  background-color: #f99417;
+  color: #fff;
+}
+
+.side-card > * {
+  font-size: 2.5rem;
+}
+
+.side-card-svg {
+  width: 4rem;
+  height: 4rem;
+}
+
+.side-card-svg svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.side-card-selected {
+  color: #fff;
+  background-color: #09122c;
+}

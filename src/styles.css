@@ -82,14 +82,14 @@ nav form {
 .widget button[type="submit"]:hover,
 .main-card-unit-button:hover {
   transform: scale(1.1);
-  background: #009ad8;
+  background-color: #f99417;
   color: #fff;
 }
 
 main {
   display: flex;
-  flex-flow: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
   padding-top: 3rem;
+  gap: 2rem;
 }

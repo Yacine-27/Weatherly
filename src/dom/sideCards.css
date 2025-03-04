@@ -1,0 +1,12 @@
+.side-cards {
+  width: clamp(20vw, 30rem, 30%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.side-card-header {
+  padding-left: 1rem;
+  font-size: 2.5rem;
+  color: #fff;
+}

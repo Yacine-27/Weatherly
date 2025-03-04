@@ -5,8 +5,9 @@
   position: relative;
   background-color: var(--nav-color);
   padding: 1.5rem;
-  width: clamp(30vw, 50rem, 80rem);
+  width: clamp(30vw, 50rem, 40%);
   border-radius: 2rem;
+  height: min-content;
 }
 
 .main-card-unit-button {
@@ -23,9 +24,15 @@
   transition: transform 0.3s ease;
 }
 
-.main-card--now {
+.main-card--date {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.main-card--date p {
   text-transform: capitalize;
   font-size: 3rem;
+  color: #fff;
 }
 
 .main-card--weather {
@@ -66,7 +73,12 @@
   font-size: 2rem;
 }
 
-.trailer-item svg {
+.trailer-item svg,
+.main-card--date svg {
   width: 3rem;
   fill: #fff;
+}
+
+.trailer-item-description {
+  color: #fff;
 }

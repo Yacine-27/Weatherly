@@ -4,7 +4,6 @@ import {
   hotSVG,
   coldSVG,
   dateSVG,
-  locationSVG,
   humiditySVG,
   windSpeedSVG,
 } from "./svgs";
@@ -16,30 +15,34 @@ export default function (weatherData, unit) {
   const html = `
         <div class="main-card">
         ${displayUnitButton(unit)}
-        <p class="main-card--now">now</p>
+        <div class="main-card--date">
+        ${
+          weatherData.index === 0
+            ? "<p>Now</p>"
+            : `${dateSVG()}
+        <p>${displayDate(weatherData.date)}</p>`
+        }
+        
+        </div>
         <div class="main-card--weather">    
-          ${displayDegree(weatherData.currentDay.temprature, unit)}
-           ${displaySVG(fahrenheitToCelsius(Number(weatherData.currentDay.temprature)))}
+          ${displayDegree(weatherData.temprature, unit)}
+           ${displaySVG(fahrenheitToCelsius(Number(weatherData.temprature)))}
         </div>
-        <div class="trailer-item">
-          ${dateSVG()}
-          <p>${new Date().toLocaleDateString()}</p>
+          <div class="trailer-item trailer-item-description">
+          <p>${weatherData.description}</p>
         </div>
-        <div class="trailer-item">
-          ${locationSVG()}
-          <p>${weatherData.address}</p>
-        </div>
+
         <div class="trailer-item">
           ${humiditySVG()}
-          <p>Humidity : ${weatherData.currentDay.humidity}%</p>
+          <p>Humidity : ${weatherData.humidity}%</p>
         </div>
         <div class="trailer-item">
           ${windSpeedSVG()}
-          <p>Wind Speed : ${weatherData.currentDay.windSpeed} km/hr</p>
+          <p>Wind Speed : ${weatherData.windSpeed} km/hr</p>
         </div>
       </div>
   `;
-  main.insertAdjacentHTML("afterbegin", html);
+  main.insertAdjacentHTML("beforeend", html);
 }
 
 const displayUnitButton = function (unit) {
@@ -58,10 +61,14 @@ const celsiusToFahrenheit = function (celsius) {
   return (celsius * 9) / 5 + 32;
 };
 
-const fahrenheitToCelsius = function (fahrenheit) {
+export const fahrenheitToCelsius = function (fahrenheit) {
   return ((fahrenheit - 32) * (5 / 9)).toFixed(0);
 };
 
-const displaySVG = function (degree) {
+export const displaySVG = function (degree) {
   return degree < 10 ? coldSVG() : degree > 30 ? hotSVG() : coolSVG();
+};
+
+export const displayDate = function (date) {
+  return `${date.getDate().toString().padStart(2, "0")}/${(date.getMonth() + 1).toString().padStart(2, "0")}`;
 };
