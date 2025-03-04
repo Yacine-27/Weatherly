@@ -13,9 +13,9 @@ let selectedDay;
 let weatherData;
 let unit = "c";
 
-const handleFormInput = function (query) {
-  if (!query) return;
-  getWeatherData(query).then((json) => {
+const selectLocation = function (location) {
+  if (!location) return;
+  getWeatherData(location).then((json) => {
     if (json) {
       weatherData = getWeatherObject(json);
       selectedDay = 0;
@@ -24,6 +24,10 @@ const handleFormInput = function (query) {
       dislaySideCards(weatherData.days, unit);
     }
   });
+};
+
+const handleFormInput = function (query) {
+  selectLocation(query);
 };
 
 const toggleUnit = function () {
@@ -65,10 +69,14 @@ main.addEventListener("click", (event) => {
   }
 });
 
-//TODO: add card headers
+window.addEventListener("unload", () => {
+  if (weatherData) {
+    localStorage.clear();
+    localStorage.setItem("location", weatherData.address);
+  }
+});
 
-// OPTIONAL:
-//TODO: run a query for the next 5 days, when clicking on a day we display the info for that day.
-//TODO: try using chartJS to do whatever.
-//TODO: try saving the user location in localStorage.
-//TODO: add a loading skeleton (or at least try to)
+document.addEventListener("DOMContentLoaded", () => {
+  if (!localStorage.getItem("location")) return;
+  selectLocation(localStorage.getItem("location"));
+});

@@ -20,6 +20,8 @@ html {
 body {
   background-color: var(--background-color);
   color: var(--font-color);
+  display: flex;
+  flex-direction: column;
 }
 
 nav {
