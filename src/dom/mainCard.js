@@ -8,6 +8,8 @@ import {
   windSpeedSVG,
 } from "./svgs";
 
+import { fahrenheitToCelsius, displayDate } from "../logic/utilities";
+
 export default function (weatherData, unit) {
   const main = document.querySelector("main");
   document.querySelector(".error")?.remove();
@@ -57,18 +59,6 @@ const displayDegree = function (temprature, unit) {
     : `<h2 class="main-card--degree">${temprature} <span>&deg;F</span></h2>`;
 };
 
-const celsiusToFahrenheit = function (celsius) {
-  return (celsius * 9) / 5 + 32;
-};
-
-export const fahrenheitToCelsius = function (fahrenheit) {
-  return ((fahrenheit - 32) * (5 / 9)).toFixed(0);
-};
-
 export const displaySVG = function (degree) {
   return degree < 10 ? coldSVG() : degree > 30 ? hotSVG() : coolSVG();
-};
-
-export const displayDate = function (date) {
-  return `${date.getDate().toString().padStart(2, "0")}/${(date.getMonth() + 1).toString().padStart(2, "0")}`;
 };

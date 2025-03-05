@@ -1,5 +1,6 @@
 import "./sideCard.css";
-import { displayDate, displaySVG, fahrenheitToCelsius } from "./mainCard";
+import { displaySVG } from "./mainCard";
+import { displayDate, fahrenheitToCelsius } from "../logic/utilities";
 export default function (weatherObject, unit) {
   return `        <div class="side-card" data-index="${weatherObject.index}">
                       <div class="side-card-date">${displayDate(weatherObject.date)}</div>

@@ -1,9 +1,12 @@
 import "./styles.css";
+
 import { getWeatherData } from "./api/weatherData";
 import { getWeatherObject } from "./logic/weatherObject";
 import displayMainCard from "./dom/mainCard";
 import displayAddress from "./dom/address";
 import dislaySideCards from "./dom/sideCards";
+import displayChart from "./dom/chart";
+import { getDatesArray, getTempsArray } from "./logic/utilities";
 const form = document.querySelector("form");
 const main = document.querySelector("main");
 const sideCards = document.querySelector(".side-cards");
@@ -22,6 +25,11 @@ const selectLocation = function (location) {
       displayAddress(weatherData.address);
       displayMainCard(weatherData.days[selectedDay], "c");
       dislaySideCards(weatherData.days, unit);
+      displayChart(
+        getDatesArray(weatherData.days),
+        getTempsArray(weatherData.days, unit),
+        unit,
+      );
     }
   });
 };
@@ -63,6 +71,11 @@ main.addEventListener("click", (event) => {
     toggleUnit();
     displayMainCard(weatherData.days[selectedDay], unit);
     dislaySideCards(weatherData.days, unit);
+    displayChart(
+      getDatesArray(weatherData.days),
+      getTempsArray(weatherData.days, unit),
+      unit,
+    );
   }
   if (event.target.closest(".side-card")) {
     selectDate(Number(event.target.closest(".side-card").dataset.index));

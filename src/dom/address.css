@@ -4,3 +4,11 @@
   font-size: 3.5rem;
   color: #adb2d4;
 }
+
+.side-card-header {
+  padding-left: 1rem;
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 2rem;
+}

@@ -1,0 +1,18 @@
+.chart-header {
+  font-size: 3rem;
+  color: #fff;
+}
+
+section.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 65rem;
+  margin: auto;
+  padding: 2rem;
+}
+
+.chart {
+  width: 100%;
+}
