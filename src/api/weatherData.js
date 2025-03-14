@@ -1,5 +1,4 @@
 import handleError from "../dom/error";
-
 export const getWeatherData = async function (location) {
   const apiKey = "8D5D9XQPJ2PU6A6YQ5K7KLTUD";
   const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${apiKey}`;

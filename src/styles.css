@@ -95,3 +95,17 @@ main {
   padding-top: 3rem;
   gap: 2rem;
 }
+
+@media (max-width: 800px) {
+  html {
+    font-size: 6px;
+  }
+  nav form {
+    flex-direction: column;
+  }
+  .widget {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+}
